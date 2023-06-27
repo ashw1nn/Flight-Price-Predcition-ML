@@ -1,0 +1,181 @@
+<html>
+<body>
+    <div class="login">
+       <h1>Flight Price Prediciton</h1>
+   
+       <form action="{{ url_for('predict_datapoint')}}" method="post">
+        <h1>
+            <legend>Flight Price Prediciton</legend>
+        </h1>
+        <div class="mb-3">
+            <label class="form-label">Airline</label>
+            <select class="form-control" name="airline" placeholder="Enter Airline" required>
+                <option class="placeholder" selected disabled value="">Select your Airline</option>
+                <option value="IndiGo">
+                    IndiGo
+                </option>
+                <option value="Air India">
+                    Air India
+                </option>
+                <option value="Jet Airways">
+                    Jet Airways
+                </option>
+                <option value="SpiceJet">
+                    SpiceJet
+                </option>
+                <option value="Multiple carriers">
+                    Multiple carriers
+                </option>
+                <option value="GoAir">
+                    GoAir
+                </option>
+                <option value="Vistara">
+                    Vistara
+                </option>
+                <option value="Air Asia">
+                    Air Asia
+                </option>
+                <option value="Jet Airways Business">
+                    Jet Airways Business
+                </option>
+                <option value="Multiple carriers Premium economy">
+                    Multiple carriers Premium economy
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Source</label>
+            <select class="form-control" name="source" placeholder="Enter your source" required>
+                <option class="placeholder" selected disabled value="">Select source</option>
+                <option value="Banglore">
+                    Banglore
+                </option>
+                <option value="Kolkata">
+                    Kolkata
+                </option>
+                <option value="Delhi">
+                    Delhi
+                </option>
+                <option value="Chennai">
+                    Chennai
+                </option>
+                <option value="Mumbai">
+                    Mumbai
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Destination</label>
+            <select class="form-control" name="destination" placeholder="Enter your Destination" required>
+                <option class="placeholder" selected disabled value="">Select Destination</option>
+                <option value="Banglore">
+                    Banglore
+                </option>
+                <option value="Kolkata">
+                    Kolkata
+                </option>
+                <option value="Delhi">
+                    Delhi
+                </option>
+                <option value="New Delhi">
+                    New Delhi
+                </option>
+                <option value="Cochin">
+                    Cochin
+                </option>
+                <option value="Hyderabad">
+                    Hyderabad
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Additional_Info</label>
+            <select class="form-control" name="additional_info"
+                placeholder="Enter you Additional_Info" required>
+                <option class="placeholder" selected disabled value="">Select Additional_Info</option>
+                <option value="No info">
+                    No info
+                </option>
+                <option value="In-flight meal not included">
+                    In-flight meal not included
+                </option>
+                <option value="No check-in baggage included">
+                    No check-in baggage included
+                </option>
+                <option value="1 Short layover">
+                    1 Short layover
+                </option>
+                <option value="No Info">
+                    No Info
+                </option>
+                <option value="1 Long layover">
+                    1 Long layover
+                </option>
+                <option value="Change airports">
+                    Change airports
+                </option>
+                <option value="Business class">
+                    Business class
+                </option>
+                <option value="Red-eye flight">
+                    Red-eye flight
+                </option>
+                <option value="2 Long layover">
+                    2 Long layover
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Duration</label>
+            <input class="form-control" type="number" name="duration"
+                placeholder="Enter your Duration" min='0' max='10000' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Total Flight Stops</label>
+            <input class="form-control" type="number" name="total_stops"
+                placeholder="Enter your Total Flight Stops" min='0' max='10' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Date</label>
+            <input class="form-control" type="number" name="date"
+                placeholder="Enter Date" min='1' max='31' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Month</label>
+            <input class="form-control" type="number" name="month"
+                placeholder="Enter Month" min='1' max='12' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Year</label>
+            <input class="form-control" type="number" name="year"
+                placeholder="Enter Year" min='2000' max='2100' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Arrival_Hour</label>
+            <input class="form-control" type="number" name="arrival_hour"
+                placeholder="Enter Arrival_Hour" min='0' max='23' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Arrival_Minute</label>
+            <input class="form-control" type="number" name="arrival_minute"
+                placeholder="Enter Arrival_Minute" min='0' max='59' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Dep_Hour</label>
+            <input class="form-control" type="number" name="dep_hour"
+                placeholder="Enter Dep_Hour" min='0' max='23' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Dep_Minute</label>
+            <input class="form-control" type="number" name="dep_minute"
+                placeholder="Enter Dep_Minute" min='0' max='59' />
+        </div>
+        <div class="mb-3">
+            <input class="btn btn-primary" type="submit" value="Predict your Flight Price" required />
+        </div>
+    </form>
+    <h2>
+       THE  prediction is {{results}}
+    </h2>
+   <body>
+</html>
